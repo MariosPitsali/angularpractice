@@ -1,1 +1,8 @@
-<h2>{{hero}}</h2>
+<div>
+    <label for="name">Hero name: (formerly kwnown as {{hero.name}})</label>
+    <input id="name" [(ngModel)]="hero.name" placeholder="name">
+</div>
+
+<div class="hero-thumbnail">
+    <img src="{{hero.imageUrl}}" alt="herimage">
+</div>
