@@ -31,10 +31,11 @@
                         <th>Age</th>
                         <th>Gender</th>
                         <th>Real Name</th>
+                        <th>Availability</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let hero of heroes">
+                    <tr *ngFor="let hero of filteredHeroes">
                         <td style="text-align: left;">
                             <img  *ngIf="showImage"  [src]='hero.image_path' [title] = 'hero.hero_name' 
                             [alt] = 'hero.hero_name'
@@ -44,6 +45,7 @@
                         <td>{{hero.age}}</td>
                         <td>{{hero.gender}}</td>
                         <td>{{hero.real_name}}</td>
+                        <td ><app-availability [availabilityDescription] = 'hero.hero_availability'></app-availability></td>
                     </tr>
                 </tbody>
             </table>
