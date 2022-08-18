@@ -1,11 +1,11 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-availability',
   templateUrl: './availability.component.html',
   styleUrls: ['./availability.component.scss']
 })
-export class AvailabilityComponent implements OnChanges,OnInit {
+export class AvailabilityComponent implements OnChanges {
 
   
   availabilityDict: any = {
@@ -15,16 +15,17 @@ export class AvailabilityComponent implements OnChanges,OnInit {
   };
   avColor: string = "green";
   @Input() availabilityDescription: string = "";
+  @Output() availabilityClickEvent: EventEmitter<string> = 
+                                    new EventEmitter<string>();
 
   constructor() { }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.avColor = this.availabilityDict[this.availabilityDescription]
   }
-   onClick(): void{
-      console.log(`Availability Clicked!`)
+
+  //this corresponds to the (click) event on this component's view
+  onClick(): void{
+      this.availabilityClickEvent.emit(`${this.availabilityDescription} was clicked`)
    }
 }

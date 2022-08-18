@@ -74,4 +74,8 @@ export class HeroesListComponent implements OnInit {
     
   }
 
+  onAvailabilityClicked(message: string): void{
+    this.pageTitle = "Product list " + message;
+  }
+
 }

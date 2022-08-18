@@ -46,7 +46,8 @@
                         <td>{{hero.gender}}</td>
                         <td>{{hero.real_name}}</td>
                         <td >
-                            <app-availability [availabilityDescription] = "hero.hero_availability">
+                            <app-availability [availabilityDescription] = "hero.hero_availability"
+                                (availabilityClickEvent)="onAvailabilityClicked($event)">
                             </app-availability>
                         </td>
                     </tr>
