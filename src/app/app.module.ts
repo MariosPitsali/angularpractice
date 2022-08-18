@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +18,7 @@ import { HeroesListComponent } from './heroes-list/heroes-list.component';
     HeroesComponent,
     HeroesListComponent,
     StripSpecialCharactersPipe,
-    AvailabilityComponent,
+    AvailabilityComponent
   ],
   imports: [
     BrowserModule,

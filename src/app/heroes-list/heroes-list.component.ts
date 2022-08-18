@@ -46,7 +46,7 @@ export class HeroesListComponent implements OnInit {
       "real_name": "Marrie",
       "image_path": "https://i.pinimg.com/474x/30/a2/af/30a2af2e10d93de9c0bb6be811186faf--middle-earth-art-work.jpg",
       "hero_image_width" : [100,60],
-      'hero_availability': 'Occupied'
+      'hero_availability': 'Missing'
     }
   ]
 

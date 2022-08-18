@@ -45,7 +45,10 @@
                         <td>{{hero.age}}</td>
                         <td>{{hero.gender}}</td>
                         <td>{{hero.real_name}}</td>
-                        <td ><app-availability [availabilityDescription] = 'hero.hero_availability'></app-availability></td>
+                        <td >
+                            <app-availability [availabilityDescription] = "hero.hero_availability">
+                            </app-availability>
+                        </td>
                     </tr>
                 </tbody>
             </table>
