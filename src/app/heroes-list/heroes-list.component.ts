@@ -2,10 +2,12 @@ import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { filter } from 'rxjs';
 import { IHero } from './heroes';
+import { HeroesService } from './heroes.service';
 
 @Component({
   selector: 'app-heroes-list',
   templateUrl: './heroes-list.component.html',
+  providers: [HeroesService],
   styleUrls: ['./heroes-list.component.scss']
 })
 export class HeroesListComponent implements OnInit {
@@ -14,6 +16,7 @@ export class HeroesListComponent implements OnInit {
   showImage: boolean = false;
 
   private _listFilter: string = '';
+
   //get and set
   get listFilter(): string {
     return this._listFilter;
@@ -68,10 +71,13 @@ export class HeroesListComponent implements OnInit {
       );
   }
 
-  constructor() { }
+  constructor(private heroesService: HeroesService) { 
+    
+  }
 
   ngOnInit(): void {
-    
+    this.heroes = this.heroesService.getHeroes();
+    this.filteredHeroes = this.heroes;
   }
 
   onAvailabilityClicked(message: string): void{
