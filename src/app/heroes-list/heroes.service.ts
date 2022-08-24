@@ -8,7 +8,7 @@ import { Observable,tap, catchError, throwError } from "rxjs";
 })
 export class HeroesService {
 
-  private requestUrl = "src\app\api\heroes\heroes.json"
+  private requestUrl = "assets/heroes.json"
 
   constructor(private http: HttpClient){
     
