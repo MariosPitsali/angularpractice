@@ -1,6 +1,6 @@
 import { ThisReceiver } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
-import { filter } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { filter, Subscription } from 'rxjs';
 import { IHero } from './heroes';
 import { HeroesService } from './heroes.service';
 
@@ -10,11 +10,12 @@ import { HeroesService } from './heroes.service';
   providers: [HeroesService],
   styleUrls: ['./heroes-list.component.scss']
 })
-export class HeroesListComponent implements OnInit {
+export class HeroesListComponent implements OnInit, OnDestroy {
 
   pageTitle: string = 'Heroes List';
   showImage: boolean = false;
   errorMessage: string = '';
+  sub!: Subscription;
 
   private _listFilter: string = '';
 
@@ -56,7 +57,8 @@ export class HeroesListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.heroesService.getHeroes().subscribe(
+    
+    this.sub = this.heroesService.getHeroes().subscribe(
       {
         next: heroes => {
           this.heroes = heroes;
@@ -66,6 +68,10 @@ export class HeroesListComponent implements OnInit {
       }
     );
     
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 
   onAvailabilityClicked(message: string): void{

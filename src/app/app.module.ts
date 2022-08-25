@@ -10,6 +10,7 @@ import {HttpClient, HttpClientModule } from '@angular/common/http'
 
 import { FormsModule } from '@angular/forms';
 import { HeroesListComponent } from './heroes-list/heroes-list.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { HeroesListComponent } from './heroes-list/heroes-list.component';
     HeroesComponent,
     HeroesListComponent,
     StripSpecialCharactersPipe,
-    AvailabilityComponent
+    AvailabilityComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
