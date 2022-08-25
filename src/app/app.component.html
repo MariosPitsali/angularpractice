@@ -1,5 +1,12 @@
-<h1>{{title}}</h1>
-<h2>{{version}}</h2>
-<h4><a [href]="targetLink">Look for Angular here</a></h4>
-<br><br><br>
-<app-heroes-list></app-heroes-list>
+
+<nav class="navbar nav navbar-expand navbar-light bg-light p-3">
+    <h1 class="navbar-brand mb-0">{{title}}</h1>
+    <ul class="nav navbar-nav">
+        <li class="nav-item"><a class="nav-link" routerLink = '/welcome' >Home</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink = '/heroes' >Hero List</a></li>    
+    </ul>
+</nav>
+<div class="jumbotron pt-3">
+    <router-outlet></router-outlet>
+</div>
+
