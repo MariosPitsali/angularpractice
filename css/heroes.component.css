@@ -1,0 +1,8 @@
+.hero-thumbnail {
+  width: 200px !important;
+}
+
+.hero-thumbnail img {
+  width: 50%;
+  display: block;
+}/*# sourceMappingURL=heroes.component.css.map */

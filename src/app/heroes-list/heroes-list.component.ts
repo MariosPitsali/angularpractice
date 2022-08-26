@@ -17,6 +17,12 @@ export class HeroesListComponent implements OnInit, OnDestroy {
   errorMessage: string = '';
   sub!: Subscription;
 
+  //array to store filtered products according to input value in html
+  filteredHeroes: IHero[] = [];
+
+  heroes: IHero[] = [
+  ]
+
   private _listFilter: string = '';
 
   //get and set
@@ -28,11 +34,7 @@ export class HeroesListComponent implements OnInit, OnDestroy {
     console.log(value);
     this.filteredHeroes = this.performFilter(value);
   }
-  //array to store filtered products according to input value in html
-  filteredHeroes: IHero[] = [];
-
-  heroes: IHero[] = [
-  ]
+  
 
   /* methods after class attributes */
 

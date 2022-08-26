@@ -28,4 +28,5 @@ export class AvailabilityComponent implements OnChanges {
   onClick(): void{
       this.availabilityClickEvent.emit(`${this.availabilityDescription} was clicked`)
    }
+   
 }
