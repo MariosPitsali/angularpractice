@@ -1,6 +1,7 @@
 .dark-mode {
   background-color: rgb(4, 20, 44) !important;
   color: white !important;
+  margin: 4em;
 }
 
 .light-mode {

@@ -23,11 +23,11 @@ export class AppComponent {
     console.log(event);
 
     if (this.darkMode){  
-      element.classList.toggle("dark-mode");
+      element.classList.add("dark-mode");
       element.classList.remove("light-mode");
     }
     else {
-      element.classList.toggle("light-mode")
+      element.classList.add("light-mode")
       element.classList.remove("dark-mode");
     }
     

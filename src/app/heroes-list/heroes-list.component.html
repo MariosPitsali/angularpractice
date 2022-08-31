@@ -40,7 +40,12 @@
                             <img  *ngIf="showImage"  [src]='hero.image_path' [title] = 'hero.hero_name' 
                             [alt] = 'hero.hero_name'
                             [width]="hero.hero_image_width[0]" ></td>
-                        <td>{{hero.hero_name}}</td>
+                            
+                                <td>
+                                    <a [routerLink]="['/heroes', hero.code]">{{hero.hero_name}}
+                                    </a>
+                                </td>
+                            
                         <td>{{hero.code | stripSpecialCharacters: '-' }}</td>
                         <td>{{hero.age}}</td>
                         <td>{{hero.gender}}</td>
