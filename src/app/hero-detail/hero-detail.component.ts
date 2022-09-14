@@ -31,7 +31,7 @@ export class HeroDetailComponent implements OnInit {
   }
 
   onBack(): void{
-    this.router.navigate('/heroes')
+    this.router.navigate(['/heroes'])
   }
 
 }
