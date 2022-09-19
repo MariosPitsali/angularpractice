@@ -1,7 +1,7 @@
 
 export interface IHero {
     hero_name: string;
-    code: string;
+    code: number;
     age: number;
     gender: string;
     real_name: string;

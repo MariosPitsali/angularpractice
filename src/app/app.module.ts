@@ -11,7 +11,8 @@ import {HttpClient, HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { HeroesListComponent } from './heroes-list/heroes-list.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { HeroDetailGuard } from './heroes/hero-detail.guard';
 
 
 @NgModule({
@@ -27,10 +28,15 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    RouterModule,
     HttpClientModule,
     RouterModule.forRoot([
       {path: 'heroes', component: HeroesListComponent},
-      {path: 'heroes/:id', component: HeroDetailComponent},
+      {
+        path: 'heroes/:id', 
+        canActivate: [HeroDetailGuard],
+        component: HeroDetailComponent
+      },
       {path: 'welcome', component: AppComponent},
       {path: '', redirectTo: 'welcome', pathMatch: 'full'},
       {path: '**', redirectTo: 'welcome', pathMatch:'full'}

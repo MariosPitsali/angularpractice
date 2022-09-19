@@ -16,11 +16,11 @@ export class HeroDetailComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = Number(this.route.snapshot.paramMap.get('id'));
     this.pageTitle += `: ${id}`;
     this.hero = {
       "hero_name": "Generic",
-      "code": "xyz-9-00",
+      "code": 1,
       "age": 32,
       "gender": "Female",
       "real_name": "John",

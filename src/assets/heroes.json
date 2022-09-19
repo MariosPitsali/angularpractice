@@ -1,7 +1,7 @@
 [
   {
                   "hero_name": "Windstorm",
-                  "code": "ftr-1-110",
+                  "code": 3,
                   "age": 22,
                   "gender": "Male",
                   "real_name": "Johnathan with a 'h' ",
@@ -12,7 +12,7 @@
             
                 {
                   "hero_name": "Olyphant",
-                  "code": "hhn-9-90",
+                  "code": 2,
                   "age": 28,
                   "gender": "Female",
                   "real_name": "Marrie",
@@ -23,7 +23,7 @@
             
                 {
                   "hero_name": "Generic",
-                  "code": "xyz-9-00",
+                  "code": 1,
                   "age": 32,
                   "gender": "Female",
                   "real_name": "John",
@@ -34,7 +34,7 @@
             
                 {
                   "hero_name": "Breakerbreaker",
-                  "code": "hhn-6-90",
+                  "code": 4,
                   "age": 31,
                   "gender": "Male",
                   "real_name": "Horace",
